@@ -13,7 +13,7 @@ function main() {
 	];
 
 	const employeesGroup = new employees(employeesRoughArray);
-	employeesGroup.setEmployee();
+	employeesGroup.checkBirthday();
 
 }
 

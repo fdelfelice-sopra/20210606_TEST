@@ -2,9 +2,7 @@
 
 class employees {
 	employeesList: any[] = []; 
-
-	message: string = "Hi {name}, happy birthbay"
-
+	messageTemplate: string = "Hi {name}, happy birthday";
 
 	constructor (
 		private roughArray: string[],
@@ -14,32 +12,40 @@ class employees {
 	// 	return this.roughArray;
 	// }
 
-	public setEmployee (): void {
+	public checkBirthday (): void {
 
 		this.roughArray.forEach((i,e)=>{
 			const employeeData: string[] = i.split(',');
 			this.employeesList.push(employeeData);
 
-			console.log(this.getName(employeeData));
+			// testing
+			if (this.isBirthday(employeeData)) {
+				const name: string = this.getName(employeeData);
+				console.log(this.setMessage(name));
+			}
 
 		})
-
 		// console.log(this.employeesList);
 	}
 
-	public setMessage () {
-		// set message to send
+	private isBirthday(employee):boolean {
+		// TODO check if today is employee Birthday
+		return true;
 	}
 
-	public getName (employee) {
+	private setMessage (name:string) {
+		return this.messageTemplate.replace('{name}', name );
+	}
+
+	private getName (employee) {
 		return `${employee[1]} ${employee[0]}`;
 	}
 
-	public getEmail (employee) {
+	private getEmail (employee) {
 		return employee[3];
 	}
 
-	public getBirthday (employee) {
+	private getBirthday (employee) {
 		return employee[2];
 	}
 }

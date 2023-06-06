@@ -13,8 +13,8 @@ describe('Test', () => {
         ];
 
         const employeesGroup = new employees(employeesRoughArray);
-	    employeesGroup.setEmployee();
+	    employeesGroup.checkBirthday();
         // TODO
-        //expect(employeesGroup.).toBe('TEST');
+        //expect(employeesGroup.).toBe('TODO');
     })
 })
