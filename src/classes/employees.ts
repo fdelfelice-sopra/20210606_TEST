@@ -1,8 +1,9 @@
 "use strict";
 
 class employees {
-	employeesList: any[] = []; 
-	messageTemplate: string = "Hi {name}, happy birthday";
+	employeesList: any[] = [];
+	emailSubject: string = "Happy birthday!";
+	messageTemplate: string = "Happy birthday, dear {name}";
 
 	constructor (
 		private roughArray: string[],
@@ -21,6 +22,7 @@ class employees {
 			// testing
 			if (this.isBirthday(employeeData)) {
 				const name: string = this.getName(employeeData);
+				// TODO send email
 				console.log(this.setMessage(name));
 			}
 
@@ -30,6 +32,7 @@ class employees {
 
 	private isBirthday(employee):boolean {
 		// TODO check if today is employee Birthday
+		const birthday = this.getBirthday(employee);
 		return true;
 	}
 
@@ -46,6 +49,7 @@ class employees {
 	}
 
 	private getBirthday (employee) {
+		// TODO get birth's day & month
 		return employee[2];
 	}
 }

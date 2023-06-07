@@ -3,7 +3,7 @@ import { test } from "node:test";
 import employees from "./classes/employees";
 
 function main() {
-	//
+	// TODO load employee form file
 
 	const employeesRoughArray: string[] = [
 		"Doe, John, 1982/10/08, john.doe@foobar.com",
